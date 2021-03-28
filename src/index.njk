@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{ title }}</title>
+    {% if myProject.environment == "production" %}
+      <link rel="stylesheet" href="{{ '/assets/styles/style.min.css' | url }}">
+    {% else %}
+      <link rel="stylesheet" href="{{ '/assets/styles/style.css' | url }}">
+    {% endif %}
   </head>
   <body>
     <h1>Welcome to 11ty + Tailwind JIT!</h1>
